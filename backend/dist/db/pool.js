@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const pg_1 = require("pg");
+// Reads DATABASE_URL from env (as set in docker-compose)
+const pool = new pg_1.Pool({
+    connectionString: process.env.DATABASE_URL,
+});
+exports.default = pool;
